@@ -81,6 +81,16 @@ This is a source-code and architecture showcase, not a complete production distr
 
 Authorized contributors need Unreal Engine 5.4, a compatible native toolchain, the private content depot, production-safe service configuration, and the external plugins declared in `ShibMVMain.uproject`. Once restored, generate project files, build `ShibMVMainEditor`, and select the appropriate client or server target for the intended deployment.
 
+## Repository checks
+
+Validate Unreal descriptors and confirm that tracked service credentials remain blank with:
+
+```bash
+python scripts/check_repository.py
+```
+
+Pull requests also run secret scanning, dependency review, and no-build C++ CodeQL analysis in GitHub Actions. A full Unreal build remains intentionally outside public CI because the repository excludes private content and licensed plugins.
+
 ## Connected repositories
 
 - [LapDogs](https://github.com/Elia-Youssef/LapDogs) - multiplayer racing title built on related ecosystem services
